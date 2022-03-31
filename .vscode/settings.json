@@ -1,3 +1,4 @@
 {
-  "liveServer.settings.multiRootWorkspaceName": "intro-to-programming-apollo"
+  "liveServer.settings.multiRootWorkspaceName": "intro-to-programming-apollo",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
