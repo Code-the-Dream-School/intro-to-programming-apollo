@@ -6,12 +6,42 @@ copyright.innerHTML = `&copy; MOHAMED MBARECK ${thisYear}.`;
 footer = footer.appendChild(copyright);
 
 //Create List of Skills//
-let skills = ["HTML", "CSS", "JavaScript"];
+let skills = ["HTML", "CSS", "JavaScript", "Photoshop"];
 let skillsSection = document.getElementById("skills");
 let skillsList = skillsSection.querySelector("ul");
 
-for (let i = 0; i < skills.length; i++) {
+for (let i = 0; i <= skills.length; i++) {
   let skill = document.createElement("li");
-  skill.innerHTML = skills[i];
-  skillsList = skillsList.appendChild(skill);
+  skill.innerText = skills[i];
+  skillsList.appendChild(skill);
 }
+//Create Messages
+let messageForm = document.getElementsByName("leave_message")[0];
+
+messageForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let name = event.target.name.value;
+  let email = event.target.email.value;
+  let message = event.target.message.value;
+  console.log(name, email, message);
+  messageForm.reset();
+
+  let messageSection = document.getElementById("messages");
+
+  let messageList = messageSection.querySelector("ul");
+
+  let newMessage = document.createElement("li");
+  newMessage.innerHTML = `<a href= 'mailto:${email}'>${name}</a>  wrote: <span>${message}</span>`;
+  messageList.appendChild(newMessage);
+  let removeButton = document.createElement("button");
+  removeButton.innerHTML = "remove";
+
+  removeButton.type = "button";
+  removeButton.addEventListener("click", function (event) {
+    let entry = removeButton.parentNode;
+    entry.remove();
+  });
+
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
+});
