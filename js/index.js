@@ -2,7 +2,7 @@ let today = new Date();
 let thisYear = today.getFullYear();
 let footer = document.querySelector("footer");
 let copyright = document.createElement("p");
-copyright.innerHTML = `&copy; MOHAMED MBARECK ${thisYear}.`;
+copyright.innerHTML = `&copy; MOHAMED MBARECK ${thisYear}`;
 footer = footer.appendChild(copyright);
 
 //Create List of Skills//
@@ -10,7 +10,7 @@ let skills = ["HTML", "CSS", "JavaScript", "Photoshop"];
 let skillsSection = document.getElementById("skills");
 let skillsList = skillsSection.querySelector("ul");
 
-for (let i = 0; i <= skills.length; i++) {
+for (let i = 0; i < skills.length; i++) {
   let skill = document.createElement("li");
   skill.innerText = skills[i];
   skillsList.appendChild(skill);
@@ -24,7 +24,7 @@ messageForm.addEventListener("submit", function (event) {
   let email = event.target.email.value;
   let message = event.target.message.value;
   console.log(name, email, message);
-  messageForm.reset();
+  event.target.reset();
 
   let messageSection = document.getElementById("messages");
 
@@ -37,6 +37,7 @@ messageForm.addEventListener("submit", function (event) {
   removeButton.innerHTML = "remove";
 
   removeButton.type = "button";
+  removeButton.classList.add("button", "messages-btn");
   removeButton.addEventListener("click", function (event) {
     let entry = removeButton.parentNode;
     entry.remove();
