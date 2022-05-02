@@ -205,7 +205,6 @@ textarea {
 }
 
 .messages-btn {
-  margin-left: 5%;
   background: rgb(231, 227, 227);
   border-radius: 5px;
   cursor: pointer;
@@ -218,6 +217,15 @@ textarea {
   background-color: #cc4949;
 }
 
+.messages-content {
+  display: flex;
+  list-style: none;
+  border-bottom: solid lightgray;
+  padding: 15px 0 15px;
+}
+.messages-text {
+  flex-grow: 1;
+}
 footer:hover {
   background-color: #d6dddf;
   border-radius: 5px;
